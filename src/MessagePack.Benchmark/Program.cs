@@ -8,10 +8,13 @@ namespace MessagePack.Benchmark
     {
         private static void Main(string[] args)
         {
-            //var summary = BenchmarkRunner.Run<SimpleObjectDeserializeComparison>();
+            var summary = BenchmarkRunner.Run<SimpleObjectDeserializeComparison>();
 
-            var comparison = new ComplexObjectSerializeSizeComparison();
-            comparison.CompareSize();
+			// var comparison = new ComplexObjectSerializeSizeComparison();
+			// comparison.CompareSize();
+
+			//var serializeTest = new SimpleObjectSerialize();
+			//serializeTest.DoSerialize();
             Console.ReadKey();
         }
     }
