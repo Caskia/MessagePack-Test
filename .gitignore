@@ -116,3 +116,6 @@ Logs.txt
 Logs.txt.*
 npm-debug.log.*
 logs/
+
+#Benchmarks
+BenchmarkDotNet.Artifacts
