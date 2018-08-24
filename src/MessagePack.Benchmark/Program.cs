@@ -1,12 +1,18 @@
-﻿using System;
+﻿using BenchmarkDotNet.Running;
+using MessagePack.Benchmark.PerformanceComparison;
+using System;
 
 namespace MessagePack.Benchmark
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //var summary = BenchmarkRunner.Run<SimpleObjectDeserializeComparison>();
+
+            var comparison = new ComplexObjectSerializeSizeComparison();
+            comparison.CompareSize();
+            Console.ReadKey();
         }
     }
 }

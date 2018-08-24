@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>MessagePack.Benchmark.PerformanceComparison.SimpleObjectDeserializeComparison</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.11.1, OS=Windows 10.0.17134.228 (1803/April2018Update/Redstone4)
+Intel Core i7-4790 CPU 3.60GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=2.1.400
+  [Host] : .NET Core 2.1.2 (CoreCLR 4.6.26628.05, CoreFX 4.6.26629.01), 64bit RyuJIT
+  Core   : .NET Core 2.1.2 (CoreCLR 4.6.26628.05, CoreFX 4.6.26629.01), 64bit RyuJIT
+</code></pre>
+<pre><code>Job=Core  Runtime=Core  
+</code></pre>
+
+<table>
+<thead><tr><th>           Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Rank</th>
+</tr>
+</thead><tbody><tr><td>JsonToPerson</td><td>1000</td><td>2,637.3 ns</td><td>48.554 ns</td><td>45.417 ns</td><td>3</td>
+</tr><tr><td>MessagePackByteToPerson</td><td>1000</td><td>267.7 ns</td><td>2.928 ns</td><td>2.596 ns</td><td>1</td>
+</tr><tr><td>JsonToPerson</td><td>10000</td><td>2,723.7 ns</td><td>54.306 ns</td><td>103.323 ns</td><td>4</td>
+</tr><tr><td>MessagePackByteToPerson</td><td>10000</td><td>273.9 ns</td><td>2.900 ns</td><td>2.713 ns</td><td>2</td>
+</tr></tbody></table>
+</body>
+</html>
